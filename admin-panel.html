@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.admin-panel {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+    <div class="admin-panel">
+        <h1>Admin Panel</h1>
+        <label for="message">Update User Dashboard:</label>
+        <textarea id="message" placeholder="Type a message"></textarea>
+        <button onclick="updateUserDashboard()">Update</button>
+    </div>
+
+    <script>function updateUserDashboard() {
+    const message = document.getElementById('message').value;
+
+    // Simulate updating the user dashboard by dispatching a custom event
+    const updateEvent = new CustomEvent('updateUserDashboard', { detail: { message } });
+    document.dispatchEvent(updateEvent);
+
+    alert('User dashboard updated successfully!');
+}
+</script>
+</body>
+</html>
